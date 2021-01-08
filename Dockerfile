@@ -4,6 +4,8 @@ ARG AIRFLOW_VERSION=2.0.0
 
 ENV AIRFLOW_HOME=/usr/local/airflow
 
+ENV AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgresql:5432/airflow
+
 ENV SLUGIFY_USES_TEXT_UNIDECODE=yes
 
 ENV USER=airflow USER_ID=1001
