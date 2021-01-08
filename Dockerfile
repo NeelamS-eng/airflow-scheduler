@@ -14,7 +14,8 @@ RUN pip install --no-cache-dir apache-airflow['crypto','kubernetes','postgres']=
 
 COPY ./scripts/entrypoint.sh /entrypoint.sh
 
-RUN chown -R airflow: ${AIRFLOW_HOME}
+#RUN chown -R airflow: ${AIRFLOW_HOME}
+RUN chmod -R 777 ${AIRFLOW_HOME}
 
 USER ${USER_ID}
 WORKDIR ${AIRFLOW_HOME}
