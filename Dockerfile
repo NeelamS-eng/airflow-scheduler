@@ -16,6 +16,8 @@ RUN pip install --no-cache-dir apache-airflow['crypto','kubernetes','postgres']=
 
 COPY ./scripts/entrypoint.sh /entrypoint.sh
 
+COPY ./dags /opt/airflow/dags
+
 #RUN chown -R airflow: ${AIRFLOW_HOME}
 RUN chmod -R 777 ${AIRFLOW_HOME}
 
